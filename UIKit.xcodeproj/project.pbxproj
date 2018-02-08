@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960BD85A202BF58400856A41 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BD859202BF58400856A41 /* UIScrollView.swift */; };
+		960BD85C202BF6FD00856A41 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BD85B202BF6FD00856A41 /* CGRect.swift */; };
 		961E1B98202BCF8E002A4167 /* UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 961E1B96202BCF8E002A4167 /* UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9672DA51202BD08400E76F7E /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA50202BD08400E76F7E /* UITextView.swift */; };
+		9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA52202BD68D00E76F7E /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960BD859202BF58400856A41 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		960BD85B202BF6FD00856A41 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		961E1B93202BCF8E002A4167 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		961E1B96202BCF8E002A4167 /* UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKit.h; sourceTree = "<group>"; };
 		961E1B97202BCF8E002A4167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9672DA50202BD08400E76F7E /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		9672DA52202BD68D00E76F7E /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,10 @@
 			children = (
 				961E1B96202BCF8E002A4167 /* UIKit.h */,
 				961E1B97202BCF8E002A4167 /* Info.plist */,
+				9672DA50202BD08400E76F7E /* UITextView.swift */,
+				960BD859202BF58400856A41 /* UIScrollView.swift */,
+				960BD85B202BF6FD00856A41 /* CGRect.swift */,
+				9672DA52202BD68D00E76F7E /* UIFont.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					961E1B92202BCF8E002A4167 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -130,6 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960BD85A202BF58400856A41 /* UIScrollView.swift in Sources */,
+				9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */,
+				9672DA51202BD08400E76F7E /* UITextView.swift in Sources */,
+				960BD85C202BF6FD00856A41 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +275,7 @@
 		961E1B9C202BCF8E002A4167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -277,6 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = RomanKerimov.UIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -284,6 +303,7 @@
 		961E1B9D202BCF8E002A4167 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
