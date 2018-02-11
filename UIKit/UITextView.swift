@@ -11,6 +11,10 @@ open class UITextView: UIScrollView {
     
     private let textView: NSTextView = .init()
     
+    public override convenience init(frame frameRect: NSRect) {
+        self.init(frame: frameRect)
+    }
+    
     public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame)
         
