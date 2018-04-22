@@ -10,6 +10,7 @@
 		960BD85A202BF58400856A41 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BD859202BF58400856A41 /* UIScrollView.swift */; };
 		960BD85C202BF6FD00856A41 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960BD85B202BF6FD00856A41 /* CGRect.swift */; };
 		961E1B98202BCF8E002A4167 /* UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 961E1B96202BCF8E002A4167 /* UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96443FBE208C938C002FFA6B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96443FBD208C938C002FFA6B /* UIColor.swift */; };
 		9672DA51202BD08400E76F7E /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA50202BD08400E76F7E /* UITextView.swift */; };
 		9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA52202BD68D00E76F7E /* UIFont.swift */; };
 		96DB1A7F202FB8B100B96D3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB1A7E202FB8B100B96D3C /* UIView.swift */; };
@@ -23,6 +24,7 @@
 		961E1B93202BCF8E002A4167 /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		961E1B96202BCF8E002A4167 /* UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKit.h; sourceTree = "<group>"; };
 		961E1B97202BCF8E002A4167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96443FBD208C938C002FFA6B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9672DA50202BD08400E76F7E /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		9672DA52202BD68D00E76F7E /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		96DB1A7E202FB8B100B96D3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				96DB1A7E202FB8B100B96D3C /* UIView.swift */,
 				96DB1A80202FB9B400B96D3C /* UIViewController.swift */,
 				96DB1A82202FBA3A00B96D3C /* UIResponder.swift */,
+				96443FBD208C938C002FFA6B /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				96DB1A81202FB9B400B96D3C /* UIViewController.swift in Sources */,
 				9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */,
 				96DB1A83202FBA3A00B96D3C /* UIResponder.swift in Sources */,
+				96443FBE208C938C002FFA6B /* UIColor.swift in Sources */,
 				9672DA51202BD08400E76F7E /* UITextView.swift in Sources */,
 				960BD85C202BF6FD00856A41 /* CGRect.swift in Sources */,
 			);
