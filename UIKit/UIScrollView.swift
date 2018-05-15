@@ -17,4 +17,46 @@ open class UIScrollView: NSScrollView {
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    open var alwaysBounceVertical: Bool {
+        get {
+            return verticalScrollElasticity == .allowed
+        }
+        
+        set {
+            verticalScrollElasticity = newValue ? .allowed : .none
+        }
+    }
+    
+    open var alwaysBounceHorizontal: Bool {
+        get {
+            return horizontalScrollElasticity == .allowed
+        }
+        
+        set {
+            horizontalScrollElasticity = newValue ? .allowed : .none
+        }
+    }
+    
+    open var showsHorizontalScrollIndicator: Bool {
+        get {
+            return hasHorizontalScroller
+        }
+        
+        set {
+            hasHorizontalScroller = newValue
+            horizontalScroller?.alphaValue = newValue ? 1 : 0
+        }
+    }
+    
+    open var showsVerticalScrollIndicator: Bool {
+        get {
+            return hasVerticalScroller
+        }
+        
+        set {
+            hasVerticalScroller = newValue
+            verticalScroller?.alphaValue = newValue ? 1 : 0
+        }
+    }
 }

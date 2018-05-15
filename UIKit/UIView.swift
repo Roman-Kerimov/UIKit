@@ -7,3 +7,16 @@
 //
 
 public typealias UIView = NSView
+
+public extension UIView {
+    
+    public var clipsToBounds: Bool {
+        get {
+            return true
+        }
+        
+        set {
+            
+        }
+    }
+}
