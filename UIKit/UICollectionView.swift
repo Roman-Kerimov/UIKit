@@ -43,6 +43,16 @@ open class UICollectionView: UIScrollView, NSCollectionViewDataSource, NSCollect
     open weak var dataSource: UICollectionViewDataSource?
     open weak var delegate: UICollectionViewDelegate?
     
+    open var backgroundView: UIView? {
+        get {
+            return collectionView.backgroundView
+        }
+        
+        set {
+            collectionView.backgroundView = newValue
+        }
+    }
+    
     private var reuseIdentifierDictionary: [String: UICollectionViewCell.Type] = .init()
     open func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
         reuseIdentifierDictionary[identifier] = cellClass as? UICollectionViewCell.Type
