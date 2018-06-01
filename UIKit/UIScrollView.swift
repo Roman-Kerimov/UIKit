@@ -45,7 +45,7 @@ open class UIScrollView: NSScrollView {
         
         set {
             hasHorizontalScroller = newValue
-            horizontalScroller?.alphaValue = newValue ? 1 : 0
+            scrollerInsets.bottom = newValue ? 0 : -100
         }
     }
     
@@ -56,7 +56,7 @@ open class UIScrollView: NSScrollView {
         
         set {
             hasVerticalScroller = newValue
-            verticalScroller?.alphaValue = newValue ? 1 : 0
+            scrollerInsets.right = newValue ? 0 : -100
         }
     }
 }
