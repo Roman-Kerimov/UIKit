@@ -8,7 +8,7 @@
 
 open class UIScreen: NSObject {
     
-    open static let main: UIScreen = .init()
+    public static let main: UIScreen = .init()
     
     open var bounds: CGRect {
         return NSScreen.main?.frame ?? .zero
