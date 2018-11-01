@@ -29,6 +29,7 @@
 		96EBF29F209C7E1E00AE00E7 /* UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBF29E209C7E1E00AE00E7 /* UICollectionViewDelegate.swift */; };
 		96EBF2A1209C82D300AE00E7 /* UICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBF2A0209C82D300AE00E7 /* UICollectionViewLayout.swift */; };
 		96EBF2AC209D170700AE00E7 /* UICollectionViewScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EBF2AB209D170700AE00E7 /* UICollectionViewScrollPosition.swift */; };
+		96FE72C6218BB92F00A256CA /* UIReturnKeyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE72C5218BB92F00A256CA /* UIReturnKeyType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		96EBF29E209C7E1E00AE00E7 /* UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelegate.swift; sourceTree = "<group>"; };
 		96EBF2A0209C82D300AE00E7 /* UICollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewLayout.swift; sourceTree = "<group>"; };
 		96EBF2AB209D170700AE00E7 /* UICollectionViewScrollPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewScrollPosition.swift; sourceTree = "<group>"; };
+		96FE72C5218BB92F00A256CA /* UIReturnKeyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIReturnKeyType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				96146514209C677C00001815 /* UILabel.swift */,
 				9676621620B4BD100050EF7E /* UIProgressView.swift */,
 				96DB1A82202FBA3A00B96D3C /* UIResponder.swift */,
+				96FE72C5218BB92F00A256CA /* UIReturnKeyType.swift */,
 				96EBF299209C6D2700AE00E7 /* UIScreen.swift */,
 				960BD859202BF58400856A41 /* UIScrollView.swift */,
 				96EBF29B209C763400AE00E7 /* UITextField.swift */,
@@ -215,6 +218,7 @@
 				9672DA51202BD08400E76F7E /* UITextView.swift in Sources */,
 				96EBF2A1209C82D300AE00E7 /* UICollectionViewLayout.swift in Sources */,
 				960BD85C202BF6FD00856A41 /* CGRect.swift in Sources */,
+				96FE72C6218BB92F00A256CA /* UIReturnKeyType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
