@@ -10,7 +10,6 @@ open class UITextField: NSTextField {
     
     public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        usesSingleLineMode = true
     }
     
     required public init?(coder: NSCoder) {

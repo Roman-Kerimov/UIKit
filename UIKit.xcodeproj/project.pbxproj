@@ -17,6 +17,8 @@
 		9672DA51202BD08400E76F7E /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA50202BD08400E76F7E /* UITextView.swift */; };
 		9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA52202BD68D00E76F7E /* UIFont.swift */; };
 		9676621720B4BD100050EF7E /* UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676621620B4BD100050EF7E /* UIProgressView.swift */; };
+		9678826B218E5488002D76FB /* UILongPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678826A218E5488002D76FB /* UILongPressGestureRecognizer.swift */; };
+		9678826D218E54EA002D76FB /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678826C218E54EA002D76FB /* UIButton.swift */; };
 		96954AAA20A647440002509B /* UIViewAutoresizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96954AA920A647440002509B /* UIViewAutoresizing.swift */; };
 		96DB1A7F202FB8B100B96D3C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB1A7E202FB8B100B96D3C /* UIView.swift */; };
 		96DB1A81202FB9B400B96D3C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB1A80202FB9B400B96D3C /* UIViewController.swift */; };
@@ -45,6 +47,8 @@
 		9672DA50202BD08400E76F7E /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		9672DA52202BD68D00E76F7E /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		9676621620B4BD100050EF7E /* UIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressView.swift; sourceTree = "<group>"; };
+		9678826A218E5488002D76FB /* UILongPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILongPressGestureRecognizer.swift; sourceTree = "<group>"; };
+		9678826C218E54EA002D76FB /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		96954AA920A647440002509B /* UIViewAutoresizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAutoresizing.swift; sourceTree = "<group>"; };
 		96DB1A7E202FB8B100B96D3C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		96DB1A80202FB9B400B96D3C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				961E1B96202BCF8E002A4167 /* UIKit.h */,
 				961E1B97202BCF8E002A4167 /* Info.plist */,
 				960BD85B202BF6FD00856A41 /* CGRect.swift */,
+				9678826C218E54EA002D76FB /* UIButton.swift */,
 				96146516209C67D500001815 /* UICollectionView.swift */,
 				96EBF291209C6B7B00AE00E7 /* UICollectionViewCell.swift */,
 				96EBF297209C6CD600AE00E7 /* UICollectionViewDataSource.swift */,
@@ -104,6 +109,7 @@
 				96443FBD208C938C002FFA6B /* UIColor.swift */,
 				9672DA52202BD68D00E76F7E /* UIFont.swift */,
 				96146514209C677C00001815 /* UILabel.swift */,
+				9678826A218E5488002D76FB /* UILongPressGestureRecognizer.swift */,
 				9676621620B4BD100050EF7E /* UIProgressView.swift */,
 				96DB1A82202FBA3A00B96D3C /* UIResponder.swift */,
 				96FE72C5218BB92F00A256CA /* UIReturnKeyType.swift */,
@@ -206,7 +212,9 @@
 				96DB1A81202FB9B400B96D3C /* UIViewController.swift in Sources */,
 				96EBF294209C6C3F00AE00E7 /* UICollectionViewFlowLayout.swift in Sources */,
 				9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */,
+				9678826B218E5488002D76FB /* UILongPressGestureRecognizer.swift in Sources */,
 				9676621720B4BD100050EF7E /* UIProgressView.swift in Sources */,
+				9678826D218E54EA002D76FB /* UIButton.swift in Sources */,
 				96146515209C677C00001815 /* UILabel.swift in Sources */,
 				96EBF292209C6B7B00AE00E7 /* UICollectionViewCell.swift in Sources */,
 				96EBF2AC209D170700AE00E7 /* UICollectionViewScrollPosition.swift in Sources */,
