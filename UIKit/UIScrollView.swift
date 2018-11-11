@@ -18,6 +18,10 @@ open class UIScrollView: NSScrollView {
         super.init(coder: coder)
     }
     
+    open override var contentSize: NSSize {
+        return documentView?.frame.size ?? .zero
+    }
+    
     open var alwaysBounceVertical: Bool {
         get {
             return verticalScrollElasticity == .allowed
