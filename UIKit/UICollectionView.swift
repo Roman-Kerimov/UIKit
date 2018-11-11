@@ -79,6 +79,10 @@ open class UICollectionView: UIScrollView, NSCollectionViewDataSource, NSCollect
         }
     }
     
+    open override var contentSize: NSSize {
+        return collectionViewLayout.collectionViewContentSize
+    }
+    
     private var reuseIdentifierDictionary: [String: UICollectionViewCell.Type] = .init()
     open func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
         reuseIdentifierDictionary[identifier] = cellClass as? UICollectionViewCell.Type
