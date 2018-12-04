@@ -6,21 +6,6 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-open class UICollectionViewCell: UIView {
+open class UICollectionViewCell: UICollectionReusableView {
     
-    public var backgroundColor: UIColor? {
-        get {
-            if let color = layer?.backgroundColor {
-                return UIColor.init(cgColor: color)
-            }
-            else {
-                return nil
-            }
-        }
-        
-        set {
-            wantsLayer = true
-            layer?.backgroundColor = newValue?.cgColor
-        }
-    }
 }

@@ -10,6 +10,33 @@ public typealias UIView = NSView
 
 public extension UIView {
     
+    public var backgroundColor: UIColor? {
+        get {
+            if let color = layer?.backgroundColor {
+                return UIColor.init(cgColor: color)
+            }
+            else {
+                return nil
+            }
+        }
+        
+        set {
+            wantsLayer = true
+            layer?.backgroundColor = newValue?.cgColor
+        }
+    }
+    
+    public var tintColor: UIColor! {
+        get {
+            return UIColor.controlAccentColor
+        }
+        
+        set {
+            
+        }
+    }
+
+    
     public var clipsToBounds: Bool {
         get {
             return true

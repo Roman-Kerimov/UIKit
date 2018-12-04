@@ -6,54 +6,72 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-open class UICollectionView: UIScrollView, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
+open class UICollectionView: UIScrollView {
     
-    public func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource!.collectionView(self, numberOfItemsInSection: section)
+    private class DelegateView: UIView, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
+        var uiCollectionView: UICollectionView {
+            return superview as! UICollectionView
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+            return uiCollectionView.dataSource!.collectionView(uiCollectionView, numberOfItemsInSection: section)
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+            _ = uiCollectionView.dataSource!.collectionView(uiCollectionView, cellForItemAt: indexPath)
+            return uiCollectionView.item!
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
+            return uiCollectionView.dataSource!.collectionView!(uiCollectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+        }
+        
+        
+        // MARK: - NSCollectionViewDelegate
+        
+        public func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+            uiCollectionView.delegate?.collectionView!(uiCollectionView, didSelectItemAt: indexPaths.first!)
+        }
+        
+        
+        // MARK: - NSCollectionViewDelegateFlowLayout
+        
+        private var delegateFlowLayout: UICollectionViewDelegateFlowLayout? {
+            return uiCollectionView.delegate as? UICollectionViewDelegateFlowLayout
+        }
+        
+        private var collectionViewFlowLayout: UICollectionViewFlowLayout {
+            return uiCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+            return delegateFlowLayout?.collectionView?(uiCollectionView, layout: collectionViewLayout, sizeForItemAt: indexPath) ?? collectionViewFlowLayout.itemSize
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return delegateFlowLayout?.collectionView?(uiCollectionView, layout: collectionViewLayout, minimumLineSpacingForSectionAt: section) ?? collectionViewFlowLayout.minimumLineSpacing
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return delegateFlowLayout?.collectionView?(uiCollectionView, layout: collectionViewLayout, minimumInteritemSpacingForSectionAt: section) ?? collectionViewFlowLayout.minimumInteritemSpacing
+        }
+        
+        public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForFooterInSection section: Int) -> NSSize {
+            return delegateFlowLayout?.collectionView?(uiCollectionView, layout: collectionViewLayout, referenceSizeForFooterInSection: section) ?? collectionViewFlowLayout.footerReferenceSize
+        }
     }
     
-    public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        _ = dataSource!.collectionView(self, cellForItemAt: indexPath)
-        return item!
-    }
-    
-    
-    // MARK: - NSCollectionViewDelegate
-    
-    public func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        delegate?.collectionView!(self, didSelectItemAt: indexPaths.first!)
-    }
-    
-   
-    // MARK: - NSCollectionViewDelegateFlowLayout
-    
-    private var delegateFlowLayout: UICollectionViewDelegateFlowLayout? {
-        return delegate as? UICollectionViewDelegateFlowLayout
-    }
-    
-    private var collectionViewFlowLayout: UICollectionViewFlowLayout {
-        return collectionViewLayout as! UICollectionViewFlowLayout
-    }
-    
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        return delegateFlowLayout?.collectionView?(self, layout: collectionViewLayout, sizeForItemAt: indexPath) ?? collectionViewFlowLayout.itemSize
-    }
-    
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return delegateFlowLayout?.collectionView?(self, layout: collectionViewLayout, minimumLineSpacingForSectionAt: section) ?? collectionViewFlowLayout.minimumLineSpacing
-    }
-    
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return delegateFlowLayout?.collectionView?(self, layout: collectionViewLayout, minimumInteritemSpacingForSectionAt: section) ?? collectionViewFlowLayout.minimumInteritemSpacing
-    }
+    private let delegateView: DelegateView = .init()
     
     private let collectionView: NSCollectionView = .init()
     
     public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame)
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        addSubview(delegateView)
+        
+        collectionView.dataSource = delegateView
+        collectionView.delegate = delegateView
         
         collectionView.collectionViewLayout = layout
         collectionView.frame = .init(origin: .zero, size: contentSize)
@@ -88,12 +106,21 @@ open class UICollectionView: UIScrollView, NSCollectionViewDataSource, NSCollect
         reuseIdentifierDictionary[identifier] = cellClass as? UICollectionViewCell.Type
     }
     
+    open func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind elementKind: String, withReuseIdentifier identifier: String) {
+        collectionView.register(viewClass, forSupplementaryViewOfKind: elementKind, withIdentifier: .init(rawValue: identifier))
+    }
+    
     private var item: CollectionViewItem? = nil
     open func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
         let cell = reuseIdentifierDictionary[identifier]!.init()
         cell.frame.size = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize ?? .zero
         item = CollectionViewItem.init(view: cell)
         return cell
+    }
+    
+    open func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionReusableView {
+        
+        return collectionView.makeSupplementaryView(ofKind: elementKind, withIdentifier: .init(rawValue: identifier), for: indexPath) as! UICollectionReusableView
     }
     
     private class CollectionViewItem: NSCollectionViewItem {
@@ -222,4 +249,9 @@ open class UICollectionView: UIScrollView, NSCollectionViewDataSource, NSCollect
     open func reloadItems(at indexPaths: [IndexPath]) {
         collectionView.reloadItems(at: .init(indexPaths))
     }
+    
+    
+    // MARK: - Type Properties
+   
+    public static let elementKindSectionFooter: String = NSCollectionView.elementKindSectionFooter
 }

@@ -18,10 +18,6 @@ open class UIScrollView: NSScrollView {
         super.init(coder: coder)
     }
     
-    open override var contentSize: NSSize {
-        return documentView?.frame.size ?? .zero
-    }
-    
     open var alwaysBounceVertical: Bool {
         get {
             return verticalScrollElasticity == .allowed
@@ -62,5 +58,20 @@ open class UIScrollView: NSScrollView {
             hasVerticalScroller = newValue
             scrollerInsets.right = newValue ? 0 : -100
         }
+    }
+    
+    open func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
+        contentView.scroll(to: rect.origin)
+    }
+}
+
+extension UIScrollView: UIFocusItemScrollableContainer {
+    
+    open override var contentSize: NSSize {
+        return documentView?.frame.size ?? .zero
+    }
+    
+    public var visibleSize: CGSize {
+        return documentVisibleRect.size
     }
 }

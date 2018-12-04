@@ -14,6 +14,11 @@
 		961E1B98202BCF8E002A4167 /* UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 961E1B96202BCF8E002A4167 /* UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9629D4EB20ABA6D5009F63DB /* UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629D4EA20ABA6D5009F63DB /* UICollectionViewDelegateFlowLayout.swift */; };
 		96443FBE208C938C002FFA6B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96443FBD208C938C002FFA6B /* UIColor.swift */; };
+		966C0A1821B176310066767F /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C0A1721B176310066767F /* UICollectionReusableView.swift */; };
+		966C0A1A21B1802A0066767F /* UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C0A1921B1802A0066767F /* UIGestureRecognizer.swift */; };
+		966C0A1C21B185CA0066767F /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C0A1B21B185CA0066767F /* UIControl.swift */; };
+		966C0A2021B1CA7F0066767F /* UIFocusItemScrollableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C0A1F21B1CA7F0066767F /* UIFocusItemScrollableContainer.swift */; };
+		966C0A2221B1CADE0066767F /* UIFocusItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C0A2121B1CADE0066767F /* UIFocusItemContainer.swift */; };
 		9672DA51202BD08400E76F7E /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA50202BD08400E76F7E /* UITextView.swift */; };
 		9672DA53202BD68D00E76F7E /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672DA52202BD68D00E76F7E /* UIFont.swift */; };
 		9676621720B4BD100050EF7E /* UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676621620B4BD100050EF7E /* UIProgressView.swift */; };
@@ -44,6 +49,11 @@
 		961E1B97202BCF8E002A4167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9629D4EA20ABA6D5009F63DB /* UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		96443FBD208C938C002FFA6B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		966C0A1721B176310066767F /* UICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
+		966C0A1921B1802A0066767F /* UIGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizer.swift; sourceTree = "<group>"; };
+		966C0A1B21B185CA0066767F /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		966C0A1F21B1CA7F0066767F /* UIFocusItemScrollableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFocusItemScrollableContainer.swift; sourceTree = "<group>"; };
+		966C0A2121B1CADE0066767F /* UIFocusItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFocusItemContainer.swift; sourceTree = "<group>"; };
 		9672DA50202BD08400E76F7E /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		9672DA52202BD68D00E76F7E /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		9676621620B4BD100050EF7E /* UIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressView.swift; sourceTree = "<group>"; };
@@ -98,6 +108,7 @@
 				961E1B97202BCF8E002A4167 /* Info.plist */,
 				960BD85B202BF6FD00856A41 /* CGRect.swift */,
 				9678826C218E54EA002D76FB /* UIButton.swift */,
+				966C0A1721B176310066767F /* UICollectionReusableView.swift */,
 				96146516209C67D500001815 /* UICollectionView.swift */,
 				96EBF291209C6B7B00AE00E7 /* UICollectionViewCell.swift */,
 				96EBF297209C6CD600AE00E7 /* UICollectionViewDataSource.swift */,
@@ -107,7 +118,11 @@
 				96EBF2A0209C82D300AE00E7 /* UICollectionViewLayout.swift */,
 				96EBF2AB209D170700AE00E7 /* UICollectionViewScrollPosition.swift */,
 				96443FBD208C938C002FFA6B /* UIColor.swift */,
+				966C0A1B21B185CA0066767F /* UIControl.swift */,
+				966C0A2121B1CADE0066767F /* UIFocusItemContainer.swift */,
+				966C0A1F21B1CA7F0066767F /* UIFocusItemScrollableContainer.swift */,
 				9672DA52202BD68D00E76F7E /* UIFont.swift */,
+				966C0A1921B1802A0066767F /* UIGestureRecognizer.swift */,
 				96146514209C677C00001815 /* UILabel.swift */,
 				9678826A218E5488002D76FB /* UILongPressGestureRecognizer.swift */,
 				9676621620B4BD100050EF7E /* UIProgressView.swift */,
@@ -203,8 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966C0A2021B1CA7F0066767F /* UIFocusItemScrollableContainer.swift in Sources */,
 				96146517209C67D500001815 /* UICollectionView.swift in Sources */,
 				96DB1A7F202FB8B100B96D3C /* UIView.swift in Sources */,
+				966C0A1821B176310066767F /* UICollectionReusableView.swift in Sources */,
+				966C0A1A21B1802A0066767F /* UIGestureRecognizer.swift in Sources */,
 				96EBF298209C6CD600AE00E7 /* UICollectionViewDataSource.swift in Sources */,
 				96EBF29C209C763400AE00E7 /* UITextField.swift in Sources */,
 				960BD85A202BF58400856A41 /* UIScrollView.swift in Sources */,
@@ -218,7 +236,9 @@
 				96146515209C677C00001815 /* UILabel.swift in Sources */,
 				96EBF292209C6B7B00AE00E7 /* UICollectionViewCell.swift in Sources */,
 				96EBF2AC209D170700AE00E7 /* UICollectionViewScrollPosition.swift in Sources */,
+				966C0A1C21B185CA0066767F /* UIControl.swift in Sources */,
 				96DB1A83202FBA3A00B96D3C /* UIResponder.swift in Sources */,
+				966C0A2221B1CADE0066767F /* UIFocusItemContainer.swift in Sources */,
 				9629D4EB20ABA6D5009F63DB /* UICollectionViewDelegateFlowLayout.swift in Sources */,
 				96EBF29F209C7E1E00AE00E7 /* UICollectionViewDelegate.swift in Sources */,
 				96954AAA20A647440002509B /* UIViewAutoresizing.swift in Sources */,
@@ -285,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -342,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;

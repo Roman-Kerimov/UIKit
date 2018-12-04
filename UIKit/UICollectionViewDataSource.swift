@@ -6,7 +6,8 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-public protocol UICollectionViewDataSource: NSObjectProtocol {
+@objc public protocol UICollectionViewDataSource: NSObjectProtocol {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    @objc optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
 }
