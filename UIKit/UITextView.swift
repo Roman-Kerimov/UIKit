@@ -12,7 +12,7 @@ open class UITextView: UIScrollView {
     private let textView: NSTextView = .init()
     
     public override convenience init(frame frameRect: NSRect) {
-        self.init(frame: frameRect)
+        self.init(frame: frameRect, textContainer: nil)
     }
     
     public init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -20,7 +20,7 @@ open class UITextView: UIScrollView {
         
         textView.frame = .init(origin: .zero, size: contentSize)
         textView.autoresizingMask = .width
-        documentView = textView
+        scrollView.documentView = textView
     }
     
     required public init?(coder: NSCoder) {

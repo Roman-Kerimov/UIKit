@@ -6,25 +6,32 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-open class UIProgressView: NSProgressIndicator {
+open class UIProgressView: UIView {
+    
+    let progressIndicator: NSProgressIndicator
     
     public override init(frame frameRect: NSRect) {
+        progressIndicator = .init(frame: .init(origin: .zero, size: frameRect.size))
         super.init(frame: frameRect)
         
-        style = .bar
+        progressIndicator.style = .bar
         
-        isIndeterminate = false
-        isDisplayedWhenStopped = true
+        progressIndicator.isIndeterminate = false
+        progressIndicator.isDisplayedWhenStopped = true
         
-        minValue = 0
-        maxValue = 1
+        progressIndicator.minValue = 0
+        progressIndicator.maxValue = 1
     }
     
     required public init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    open override func layout() {
+        progressIndicator.frame.size = frame.size
+    }
+    
     open func setProgress(_ progress: Float, animated: Bool) {
-        doubleValue = .init(progress)
+        progressIndicator.doubleValue = .init(progress)
     }
 }

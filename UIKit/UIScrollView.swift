@@ -6,72 +6,83 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-open class UIScrollView: NSScrollView {
+open class UIScrollView: UIView {
+    
+    internal let scrollView: NSScrollView
+    
     public override init(frame frameRect: NSRect) {
+        scrollView = .init(frame: .init(origin: .zero, size: frameRect.size))
         super.init(frame: frameRect)
         
-        hasVerticalScroller = true
-        hasHorizontalScroller = true
+        addSubview(scrollView)
+        
+        scrollView.hasVerticalScroller = true
+        scrollView.hasHorizontalScroller = true
     }
     
     required public init?(coder: NSCoder) {
+        scrollView = NSScrollView.init(coder: coder)!
         super.init(coder: coder)
+    }
+    
+    open override func layout() {
+        scrollView.frame.size = frame.size
     }
     
     open var alwaysBounceVertical: Bool {
         get {
-            return verticalScrollElasticity == .allowed
+            return scrollView.verticalScrollElasticity == .allowed
         }
         
         set {
-            verticalScrollElasticity = newValue ? .allowed : .none
+            scrollView.verticalScrollElasticity = newValue ? .allowed : .none
         }
     }
     
     open var alwaysBounceHorizontal: Bool {
         get {
-            return horizontalScrollElasticity == .allowed
+            return scrollView.horizontalScrollElasticity == .allowed
         }
         
         set {
-            horizontalScrollElasticity = newValue ? .allowed : .none
+            scrollView.horizontalScrollElasticity = newValue ? .allowed : .none
         }
     }
     
     open var showsHorizontalScrollIndicator: Bool {
         get {
-            return hasHorizontalScroller
+            return scrollView.hasHorizontalScroller
         }
         
         set {
-            hasHorizontalScroller = newValue
-            scrollerInsets.bottom = newValue ? 0 : -100
+            scrollView.hasHorizontalScroller = newValue
+            scrollView.scrollerInsets.bottom = newValue ? 0 : -100
         }
     }
     
     open var showsVerticalScrollIndicator: Bool {
         get {
-            return hasVerticalScroller
+            return scrollView.hasVerticalScroller
         }
         
         set {
-            hasVerticalScroller = newValue
-            scrollerInsets.right = newValue ? 0 : -100
+            scrollView.hasVerticalScroller = newValue
+            scrollView.scrollerInsets.right = newValue ? 0 : -100
         }
     }
     
     open func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
-        contentView.scroll(to: rect.origin)
+        scrollView.contentView.scroll(to: rect.origin)
     }
 }
 
 extension UIScrollView: UIFocusItemScrollableContainer {
     
-    open override var contentSize: NSSize {
-        return documentView?.frame.size ?? .zero
+    @objc open var contentSize: NSSize {
+        return scrollView.documentView?.frame.size ?? .zero
     }
     
     public var visibleSize: CGSize {
-        return documentVisibleRect.size
+        return scrollView.documentVisibleRect.size
     }
 }

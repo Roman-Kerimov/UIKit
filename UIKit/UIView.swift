@@ -6,11 +6,9 @@
 //  Copyright © 2018 Roman Kerimov. All rights reserved.
 //
 
-public typealias UIView = NSView
-
-public extension UIView {
+open class UIView: NSView {
     
-    public var backgroundColor: UIColor? {
+    open var backgroundColor: UIColor? {
         get {
             if let color = layer?.backgroundColor {
                 return UIColor.init(cgColor: color)
@@ -26,7 +24,7 @@ public extension UIView {
         }
     }
     
-    public var tintColor: UIColor! {
+    open var tintColor: UIColor! {
         get {
             return UIColor.controlAccentColor
         }
@@ -37,7 +35,7 @@ public extension UIView {
     }
 
     
-    public var clipsToBounds: Bool {
+    open var clipsToBounds: Bool {
         get {
             return true
         }
@@ -50,7 +48,7 @@ public extension UIView {
     
     // MARK: - Configuring the Bounds and Frame Rectangles
     
-    public var center: CGPoint {
+    open var center: CGPoint {
         get {
             return .init(x: frame.midX, y: frame.midY)
         }
@@ -63,7 +61,7 @@ public extension UIView {
     
     // MARK: - Animating Views
     
-    class func setAnimationsEnabled(_ enabled: Bool) {
+    open class func setAnimationsEnabled(_ enabled: Bool) {
         
     }
 }

@@ -74,10 +74,10 @@ open class UICollectionView: UIScrollView {
         collectionView.delegate = delegateView
         
         collectionView.collectionViewLayout = layout
-        collectionView.frame = .init(origin: .zero, size: contentSize)
+        collectionView.frame = .init(origin: .zero, size: scrollView.contentSize)
         collectionView.isSelectable = true
         
-        documentView = collectionView
+        scrollView.documentView = collectionView
     }
     
     required public init?(coder: NSCoder) {
@@ -89,7 +89,7 @@ open class UICollectionView: UIScrollView {
     
     open var backgroundView: UIView? {
         get {
-            return collectionView.backgroundView
+            return collectionView.backgroundView as? UIView
         }
         
         set {
