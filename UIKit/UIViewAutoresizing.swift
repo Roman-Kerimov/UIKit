@@ -10,11 +10,11 @@ public typealias UIViewAutoresizing = NSView.AutoresizingMask
 
 public extension UIViewAutoresizing {
     
-    public static var flexibleWidth: UIViewAutoresizing {
+    static var flexibleWidth: UIViewAutoresizing {
         return width
     }
     
-    public static var flexibleHeight: UIViewAutoresizing {
+    static var flexibleHeight: UIViewAutoresizing {
         return height
     }
 }

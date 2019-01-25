@@ -10,7 +10,7 @@ public typealias UIResponder = NSResponder
 
 public extension UIResponder {
     
-    public var next: UIResponder? {
+    var next: UIResponder? {
         return nextResponder
     }
 }

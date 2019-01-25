@@ -9,7 +9,7 @@
 public typealias UIFont = NSFont
 
 public extension UIFont {
-    public func withSize(_ fontSize: CGFloat) -> UIFont {
+    func withSize(_ fontSize: CGFloat) -> UIFont {
         return UIFont.init(name: fontName, size: fontSize)!
     }
 }
