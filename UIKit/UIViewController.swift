@@ -8,5 +8,13 @@
 
 open class UIViewController: NSViewController {
     
+    open override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        viewWillAppear(true)
+    }
+    
+    open func viewWillAppear(_ animated: Bool) {}
+    
     open func didReceiveMemoryWarning() {}
 }
