@@ -7,16 +7,16 @@
 //
 
 public enum UIReturnKeyType: Int {
-    case `default` = 0
-    case go = 1
-    case google = 2
-    case join = 3
-    case next = 4
-    case route = 5
-    case search = 6
-    case send = 7
-    case yahoo = 8
-    case done = 9
-    case emergencyCall = 10
-    case `continue` = 11
+    case `default`
+    case go
+    case google
+    case join
+    case next
+    case route
+    case search
+    case send
+    case yahoo
+    case done
+    case emergencyCall
+    case `continue`
 }
