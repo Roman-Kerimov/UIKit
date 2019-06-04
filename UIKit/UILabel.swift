@@ -97,7 +97,7 @@ open class UILabel: UIView {
         }
         
         set {
-            textField.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
+            textField.adjustsFontSizeToFitWidth = newValue
         }
     }
 }
